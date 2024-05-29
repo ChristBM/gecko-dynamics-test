@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main main"
+    "sidebar sidebar"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto auto;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  grid-area: header;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 1rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  grid-area: sidebar;
+  background-color: #444;
+  padding: 1em;
+  color: #fff;
+}
+
+main {
+  grid-area: main;
+  padding: 2em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#myList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+#myList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+  border-bottom: 1px solid #f4f4f4;
+  background-color: #efefef;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+#addItemButton {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    list-style: none;
+  }
+
+  aside {
+    padding: 0.5em;
+  }
+}
